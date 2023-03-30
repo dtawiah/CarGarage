@@ -1,3 +1,4 @@
+import java.util.Scanner;
 public class Car {
     //Constants
     private final String make = "Hyundai";
@@ -71,8 +72,25 @@ public class Car {
     }
 
     public boolean driveCar() {
+        double gallon = 1;
+        double fuelBurned;
+        Scanner scnr = new Scanner(System.in);
+        System.out.print("How far are you traveling? ");
+        int distance = scnr.nextInt();
         System.out.println("What is your cars average fuel consumption in mpg? " +
                 "(must be between 20 and 30)");
+        int aveMiles = scnr.nextInt();
+        System.out.println("What is your speed between 0 and 80? ");
+        int speed = scnr.nextInt();
+
+        double fuelConsumption = (distance /aveMiles) * gallon;
+
+        if (speed >= 55 && speed <= 0) {
+            fuelBurned = fuelLevel - fuelConsumption;
+        }
+        if (55 > speed && speed = 60){
+            fuelConsumption *= (3/100);
+        }
 
 
 //        double distance;
@@ -85,12 +103,12 @@ public class Car {
 //            fuelBurned = distance / fuelEconomy;
 //            fuelLevel = fuelBurned;
 //            return true;
-        }
 
-        odometer += drivingDistance;
-        tripOdometer += drivingDistance;
-        fuelLevel = 0.0;
-        return false;
+//
+//        odometer += drivingDistance;
+//        tripOdometer += drivingDistance;
+//        fuelLevel = 0.0;
+//        return false;
     }
 
     public double getTripOdometer() {
